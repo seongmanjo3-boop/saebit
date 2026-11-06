@@ -1,0 +1,16 @@
+{
+  "name": "saebit-site",
+  "version": "1.0.0",
+  "description": "사회단체 새빛 공식 웹사이트",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve ."
+  },
+  "keywords": [
+    "새빛",
+    "saebit"
+  ],
+  "author": "조성만",
+  "license": "ISC"
+}

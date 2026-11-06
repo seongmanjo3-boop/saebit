@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>새빛 회원가입 이메일 확인</title>
+</head>
+<body style="margin:0;padding:0;background:#F7F4F5;word-break:keep-all;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#F7F4F5;">
+  <tr>
+    <td align="center" style="padding:32px 16px;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:520px;background:#FFFFFF;border:1px solid #E7E0E2;">
+        <tr>
+          <td style="background:#7A2338;padding:22px 32px;font-family:'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif;word-break:keep-all;">
+            <span style="font-size:22px;font-weight:700;color:#FFFFFF;letter-spacing:1px;">새빛</span>
+            <span style="font-size:13px;color:#E8C9A0;padding-left:8px;">화합과 성장</span>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:36px 32px 8px;font-family:'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif;word-break:keep-all;color:#221A1C;">
+            <h1 style="margin:0 0 16px;font-size:22px;line-height:1.4;font-weight:700;">회원가입 이메일 확인</h1>
+            <p style="margin:0 0 12px;font-size:15px;line-height:1.75;color:#5F5357;">안녕하세요, 사회단체 새빛입니다.</p>
+            <p style="margin:0 0 24px;font-size:15px;line-height:1.75;color:#5F5357;">새빛 회원가입을 환영합니다. <b style="color:#221A1C;">{{ .Email }}</b> 주소가 맞는지 확인하기 위해<br>아래 버튼을 눌러 가입을 마쳐 주세요.</p>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" style="padding:0 32px 26px;">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td style="background:#7A2338;">
+                  <a href="{{ .ConfirmationURL }}" style="display:inline-block;padding:15px 36px;font-family:'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif;word-break:keep-all;font-size:16px;font-weight:700;color:#FFFFFF;text-decoration:none;">이메일 확인하고 가입 마치기</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:0 32px 28px;font-family:'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif;word-break:keep-all;">
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#F7F4F5;">
+              <tr>
+                <td style="padding:14px 16px;font-size:13.5px;line-height:1.7;color:#5F5357;">
+                  · 이 링크는 <b style="color:#221A1C;">한 번만</b> 쓸 수 있습니다.<br>
+                  · 가입한 적이 없다면 이 메일은 무시하셔도 됩니다.
+                </td>
+              </tr>
+            </table>
+            <p style="margin:18px 0 0;font-size:12.5px;line-height:1.7;color:#968A8E;">버튼이 눌리지 않으면 아래 주소를 복사해 인터넷 주소창에 붙여 넣으세요.<br><a href="{{ .ConfirmationURL }}" style="color:#7A2338;word-break:break-all;">{{ .ConfirmationURL }}</a></p>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-top:1px solid #E7E0E2;padding:18px 32px;font-family:'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif;word-break:keep-all;font-size:12px;line-height:1.7;color:#968A8E;">
+            사회단체 새빛 · 대표이사 조성만<br>
+            이 메일은 발신 전용입니다. 문의는 seongmanjo3@gmail.com 또는 카카오톡 1:1 문의로 해 주세요.
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
