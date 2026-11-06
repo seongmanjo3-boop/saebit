@@ -8,12 +8,12 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="새빛 — 화합과 성장. 모두의 목소리가 정책이 되는 세상을 만들어 가는 사회단체.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://saebit.example/">
-<link rel="canonical" href="https://saebit.example/">
+<meta property="og:url" content="https://saebitkorea.vercel.app/">
+<link rel="canonical" href="https://saebitkorea.vercel.app/">
 <meta property="og:site_name" content="새빛">
 <meta property="og:title" content="새빛 — 화합과 성장">
 <meta property="og:description" content="모두의 목소리가 정책이 되는 세상, 새빛이 함께 만들어 갑니다.">
-<meta property="og:image" content="https://saebit.example/og-image.png">
+<meta property="og:image" content="https://saebitkorea.vercel.app/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -2080,37 +2080,42 @@ function sampleProof(amount,label){var c=document.createElement('canvas');c.widt
 function pub(u){return {id:u.id,full_name:u.full_name||'',roles:(u.roles&&u.roles.length)?u.roles.slice():['일반회원'],perms:(u.perms||[]).slice(),username:u.username,email:u.email,is_admin:!!u.is_admin,created_at:u.created_at,example:!!u.example,withdraw_requested_at:u.withdraw_requested_at||null,withdraw_reason:u.withdraw_reason||null}}
 
 var Demo={
-  db:function(){var d=LS.get('saebit_demo_v9');if(!d){var now=Date.now(),day=864e5;
-      d={seq:4,pseq:5,bseq:4,cseq:3,session:null,greeting:{body:DEFAULT_GREETING,signer:DEFAULT_SIGN,updated_at:null},
-       comments:[{id:1,post_id:2,body:'환영합니다! 함께 열심히 해요.',author_id:'ex1',author_username:'saebit_ex1',author_name:'예시회원',author_role:'책임회원',example:true,created_at:new Date(now-day).toISOString()},{id:2,post_id:1,body:'자유게시판 생겨서 좋네요.',author_id:'ex2',author_username:'saebit_ex2',author_name:'샘플회원',author_role:'일반회원',example:true,created_at:new Date(now-2*day).toISOString()}],users:[
-        {id:'ex1',full_name:'예시회원',roles:['책임회원'],username:'saebit_ex1',email:'example1@example.com',pw:'',created_at:new Date(now-6*day).toISOString(),example:true},
-        {id:'ex2',full_name:'샘플회원',roles:['일반회원'],username:'saebit_ex2',email:'example2@example.com',pw:'',created_at:new Date(now-3*day).toISOString(),example:true}],
-       bposts:[
-        {id:3,board:'core',title:'책임회원 게시판 사용 안내 (예시)',body:'책임회원 이상만 볼 수 있는 게시판입니다. 내부 논의와 활동 계획을 나눠 주세요.',author_id:'ex1',author_username:'saebit_ex1',author_name:'예시회원',author_role:'책임회원',example:true,created_at:new Date(now-day).toISOString()},
-        {id:2,board:'free',title:'가입 인사드립니다 (예시)',body:'반갑습니다. 앞으로 열심히 활동하겠습니다!',author_id:'ex2',author_username:'saebit_ex2',author_name:null,author_role:'일반회원',example:true,created_at:new Date(now-2*day).toISOString()},
-        {id:1,board:'free',title:'자유게시판을 열었습니다 (예시)',body:'회원이라면 누구나 글을 쓸 수 있습니다. 서로 존중하는 말로 이야기 나눠 주세요.',author_id:'ex1',author_username:'saebit_ex1',author_name:null,author_role:'책임회원',example:true,created_at:new Date(now-3*day).toISOString()}],
-       posts:[
-        {id:4,author_name:'예시회원',author_role:'책임회원',type:'finance',title:'2026년 10월 후원금 사용 내역 (예시)',body:'화면 확인용 예시 자료입니다. 관리자 화면의 ‘게시물 관리’에서 재정공개 자료를 올리면 이곳에 표시됩니다.',example:true,file_name:'예시_10월_재정보고.pdf',file_size:302144,created_at:new Date(now-day).toISOString()},
-        {id:3,author_name:'새빛 운영진',type:'notice',title:'새빛 홈페이지를 열었습니다',body:'사회단체 새빛의 홈페이지를 열었습니다.\n\n홈페이지에서 회원가입과 후원을 할 수 있고, 공지사항과 새빛국가종합연구원의 연구보고서를 볼 수 있습니다.',pinned:true,created_at:new Date(now-day).toISOString()},
-        {id:2,author_name:'예시회원',author_role:'책임회원',type:'report',title:'시민 정책 참여 실태 조사 (예시 보고서)',body:'화면 확인용 예시 보고서입니다. 관리자 화면의 ‘게시물 관리’에서 실제 보고서를 올리면 이곳에 표시됩니다.',dept:'정책연구국',example:true,file_name:'예시_보고서.pdf',file_size:1258291,created_at:new Date(now-2*day).toISOString()},
-        {id:1,author_name:'예시회원',author_role:'책임회원',type:'notice',title:'회원 모집 안내 (예시 공지)',body:'화면 확인용 예시 공지입니다.',example:true,created_at:new Date(now-3*day).toISOString()}],
-       donations:[
-        {id:3,user_id:'ex1',amount:10000,memo:'응원합니다',photo:sampleProof(10000,'후원'),status:'pending',created_at:new Date(now-2*36e5).toISOString()},
-        {id:2,user_id:'ex2',amount:30000,memo:'',photo:sampleProof(30000,'후원'),status:'approved',reviewed_at:new Date(now-day).toISOString(),created_at:new Date(now-2*day).toISOString()},
-        {id:1,user_id:'ex1',amount:5000,memo:'',photo:sampleProof(5000,'후원'),status:'rejected',reject_reason:'사진에서 금액을 확인할 수 없습니다',reviewed_at:new Date(now-4*day).toISOString(),created_at:new Date(now-5*day).toISOString()}]};
-      LS.set('saebit_demo_v9',d)}if(!d.v10)Demo.migrate10(d);return d},
-  save:function(d){LS.set('saebit_demo_v9',d)},
+  db:function(){
+    var d=LS.get('saebit_data_v1');
+    if(!d){
+      var now=Date.now();
+      d={
+        seq:1,pseq:2,bseq:1,cseq:1,session:null,
+        greeting:{body:DEFAULT_GREETING,signer:DEFAULT_SIGN,updated_at:null},
+        comments:[],users:[],bposts:[],
+        posts:[
+          {id:1,author_name:'새빛 운영진',type:'notice',title:'새빛 홈페이지를 열었습니다',body:'사회단체 새빛의 홈페이지를 열었습니다.\n\n홈페이지에서 회원가입과 후원을 할 수 있고, 공지사항과 새빛국가종합연구원의 연구보고서를 볼 수 있습니다.',pinned:true,created_at:new Date(now).toISOString()}
+        ],
+        donations:[],notes:[],logs:[],reports:[],events:[],apps:[],subs:[],visits:{}
+      };
+      LS.set('saebit_data_v1',d);
+    }
+    if(d.posts) d.posts=d.posts.filter(function(x){return !x.example});
+    if(d.bposts) d.bposts=d.bposts.filter(function(x){return !x.example});
+    if(d.events) d.events=d.events.filter(function(x){return !x.example});
+    if(d.users) d.users=d.users.filter(function(x){return !x.example});
+    if(d.comments) d.comments=d.comments.filter(function(x){return !x.example});
+    if(d.donations) d.donations=d.donations.filter(function(x){return !x.example});
+    if(d.apps) d.apps=d.apps.filter(function(x){return !x.example});
+    return d;
+  },
+  save:function(d){LS.set('saebit_data_v1',d)},
   init:function(){var d=this.db();if(d.session){var u=d.users.filter(function(x){return x.id===d.session})[0];if(u)me=pub(u)}return Promise.resolve()},
   usernameAvailable:function(n){return Promise.resolve(!this.db().users.some(function(x){return x.username===n}))},
   emailAvailable:function(e){e=String(e).toLowerCase();return Promise.resolve(!this.db().users.some(function(x){return String(x.email).toLowerCase()===e}))},
   signUp:function(f){var self=this;return hash(f.password).then(function(h){var d=self.db();
     if(d.users.some(function(x){return x.email===f.email}))throw new Error('이미 가입된 이메일입니다.');
     if(d.users.some(function(x){return x.username===f.username}))throw new Error('이미 사용 중인 아이디입니다.');
-    var first=!d.users.some(function(x){return !x.example});
+    var first=!d.users.length;
     var u={id:'u'+Date.now(),full_name:f.full_name,roles:['일반회원'],perms:[],username:f.username,email:f.email,pw:h,is_admin:first,created_at:new Date().toISOString()};
     d.users.push(u);d.session=u.id;self.save(d);me=pub(u);return {ok:true,firstAdmin:first}})},
   signIn:function(uid,pw){var self=this;return hash(pw).then(function(h){var d=self.db();var u=d.users.filter(function(x){return x.username===uid})[0];
-    if(!u||u.example||u.pw!==h)throw new Error('아이디 또는 비밀번호가 올바르지 않습니다.');d.session=u.id;self.save(d);me=pub(u)})},
+    if(!u||u.pw!==h)throw new Error('아이디 또는 비밀번호가 올바르지 않습니다.');d.session=u.id;self.save(d);me=pub(u)})},
   signOut:function(){var d=this.db();d.session=null;this.save(d);me=null;return Promise.resolve()},
   resetPassword:function(){return Promise.resolve({demo:true})},
   /* 미리보기 전용: 메일 속 재설정 링크를 누른 것처럼 그 계정으로 임시 로그인 */
@@ -2269,16 +2274,10 @@ function permsText(p){return p&&p.length?p.map(function(x){return PERM_L[x]||x})
 var PT_LONG={notice:'공지사항',statement:'성명·논평',report:'연구보고서',finance:'재정공개'};
 var DENY=function(){return Promise.reject(new Error('permission denied'))};
 Object.assign(Demo,{
-  migrate10:function(d){var now=Date.now(),day=864e5;
+  migrate10:function(d){
     ['notes','logs','reports','events','apps','subs','posts','bposts'].forEach(function(k){d[k]=d[k]||[]});d.visits=d.visits||{};
-    d.nseq=d.nseq||1;d.lseq=d.lseq||1;d.rseq=d.rseq||1;d.eseq=d.eseq||2;d.aseq=d.aseq||2;d.sseq=d.sseq||1;
-    d.pseq=Math.max(d.pseq||5,6);d.bseq=Math.max(d.bseq||4,5);
-    d.posts.push({id:d.pseq++,type:'statement',category:'성명',author_name:'새빛 운영진',author_role:'대표이사',title:'청소년의 정책 참여를 넓히는 제도 개선을 촉구합니다 (예시)',body:'화면 확인용 예시 성명입니다.\n\n관리자 화면의 ‘게시물 관리’에서 성명·논평을 올리면 이곳에 표시됩니다. 성명은 새빛의 공식 입장을, 논평은 현안에 대한 짧은 의견을 밝힐 때 씁니다.',example:true,created_at:new Date(now-2*day).toISOString()});
-    d.bposts.push({id:d.bseq++,board:'director',category:'안건',title:'다음 이사회 안건 정리 (예시)',body:'이사회 구성원만 볼 수 있는 게시판입니다. 안건, 회의록, 의결 사항, 자료로 나눠 기록합니다.',author_id:'ex1',author_username:'saebit_ex1',author_name:'예시회원',author_role:'이사',example:true,images:[],created_at:new Date(now-day).toISOString()});
-    var st=new Date(now+10*day);st.setHours(19,0,0,0);var un=new Date(now+7*day);un.setHours(23,59,0,0);
-    d.events.push({id:1,title:'새빛 정책 교육 1기 (예시)',body:'정책이 만들어지는 과정과 정책 제안서 쓰는 법을 함께 배웁니다.\n\n화면 확인용 예시 행사입니다. 관리자 화면의 ‘행사 관리’에서 실제 행사를 등록할 수 있습니다.',place:'온라인 (화상회의)',starts_at:st.toISOString(),ends_at:new Date(st.getTime()+2*36e5).toISOString(),apply_until:un.toISOString(),capacity:30,closed:false,author_name:'새빛 운영진',example:true,created_at:new Date(now-day).toISOString()});
-    d.apps.push({id:1,event_id:1,user_id:'ex2',full_name:'샘플회원',username:'saebit_ex2',email:'example2@example.com',note:'',example:true,created_at:new Date(now-day/2).toISOString()});
-    d.v10=true;LS.set('saebit_demo_v9',d)},
+    d.v10=true;LS.set('saebit_data_v1',d);
+  },
   note:function(d,uid,kind,title,link){if(!uid||!d.users.some(function(u){return u.id===uid}))return;d.notes=d.notes||[];d.notes.unshift({id:d.nseq++,user_id:uid,kind:kind,title:title,link:link,read_at:null,created_at:nowISO()})},
   notePerm:function(d,perm,kind,title,link){var self=this;d.users.forEach(function(u){if(u.is_admin||(u.perms||[]).indexOf(perm)>=0)self.note(d,u.id,kind,title,link)})},
   log:function(d,a,t,x){d.logs=d.logs||[];d.logs.unshift({id:d.lseq++,actor_name:actorName(),action:a,target:t||null,detail:x||null,created_at:nowISO()})},
@@ -2450,7 +2449,7 @@ function pKey(){return me?me.id+':'+canFinance():''}
 function loadPosts(){postsKey=pKey();return API.listPosts().then(function(p){POSTS=p||[]}).catch(function(e){console.error(e);POSTS=[]}).then(function(){postsLoaded=true;renderHomeNews();
   var h=location.hash.slice(1);if(h==='admin'&&adm.tab==='post')drawPostsAdmin();if(h==='finance')renderFinance();if(h==='notice')renderNotice();if(h==='reports')renderReports();if(h==='statements')renderStatements();if(/^post-\d+$/.test(h))renderPost(Number(h.slice(5)))})}
 function byNotice(a,b){return (b.pinned?1:0)-(a.pinned?1:0)||new Date(b.created_at)-new Date(a.created_at)}
-function exTag(p){return p.example?'<span class="ex">예시</span>':''}
+function exTag(p){return ''}
 function canSeeMember(){return has('board_free')}
 function uidLink(u,fb){if(!u)return esc(fb||'회원');return canSeeMember()?'<button type="button" class="uid-btn" data-uinfo="'+esc(u)+'" title="회원정보 보기">'+esc(u)+'</button>':esc(u)}
 function auList(p){if(p.board==='free')return '<span class="au">'+uidLink(p.author_username,p.author_name)+'</span>';return '<span class="au">'+esc(p.author_name||'운영진')+(p.author_role?'<em>'+esc(p.author_role)+'</em>':'')+'</span>'}
