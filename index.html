@@ -232,7 +232,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);font-size:13.5px;
 :root{--ok-bg:#E5F3EA;--ok-fg:#1E6B3D;--warn-bg:#FFF3D6;--warn-fg:#8A5A00;--bad-bg:#FBE5E5;--bad-fg:#A12A2A}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--ok-bg:#163423;--ok-fg:#8FD6A8;--warn-bg:#3A2D10;--warn-fg:#F0C774;--bad-bg:#3C1818;--bad-fg:#F2A0A0}}
 :root[data-theme="dark"]{--ok-bg:#163423;--ok-fg:#8FD6A8;--warn-bg:#3A2D10;--warn-fg:#F0C774;--bad-bg:#3C1818;--bad-fg:#F2A0A0}
-body:not(.demo) .demo-only{display:none!important}
+.demo-bar,.demo-only{display:none!important}
 .util .right .who{color:var(--ink);font-weight:700}
 .linkbtn{background:none;border:0;padding:0;cursor:pointer;font-size:inherit;color:inherit}
 .linkbtn:hover,.util .right a:hover{color:var(--accent)}
@@ -1317,7 +1317,6 @@ svg.clip{display:inline-block;width:15px;height:15px;vertical-align:-2px;margin-
 <!-- ===== 회원가입 ===== -->
 <section class="view" id="v-signup" hidden>
   <div class="wrap">
-    <div class="demo-bar demo-only">미리보기(데모) 모드입니다. 가입 정보는 이 브라우저에만 저장되고, 처음 가입한 계정이 관리자가 됩니다.</div>
     <form class="panel" id="fSignup" novalidate>
       <h1>회원가입</h1>
       <p class="lead">새빛 회원이 되면 후원과 활동 소식을 함께할 수 있습니다.</p>
@@ -1371,7 +1370,6 @@ svg.clip{display:inline-block;width:15px;height:15px;vertical-align:-2px;margin-
 <!-- ===== 로그인 ===== -->
 <section class="view" id="v-login" hidden>
   <div class="wrap">
-    <div class="demo-bar demo-only">미리보기(데모) 모드입니다. 먼저 회원가입을 하면 그 아이디로 로그인할 수 있습니다.</div>
     <form class="panel" id="fLogin" novalidate>
       <h1>로그인</h1>
       <p class="lead">아이디와 비밀번호를 입력해 주세요.</p>
@@ -1415,7 +1413,6 @@ svg.clip{display:inline-block;width:15px;height:15px;vertical-align:-2px;margin-
 <!-- ===== 후원하기 ===== -->
 <section class="view" id="v-donate" hidden>
   <div class="wrap">
-    <div class="demo-bar demo-only">미리보기(데모) 모드입니다. 승인 요청은 이 브라우저에만 저장됩니다.</div>
     <form class="panel mid" id="fDonate" novalidate>
       <h1>후원하기</h1>
       <p class="lead">계좌로 이체한 뒤 금액과 이체 확인 사진을 올려 승인을 요청해 주세요. 관리자가 확인하면 마이페이지에서 결과를 볼 수 있습니다.</p>
@@ -1489,7 +1486,6 @@ svg.clip{display:inline-block;width:15px;height:15px;vertical-align:-2px;margin-
 <!-- ===== 관리자 ===== -->
 <section class="view" id="v-admin" hidden>
   <div class="wrap">
-    <div class="demo-bar demo-only">미리보기(데모) 모드입니다. ‘예시’ 표시가 붙은 회원과 후원은 화면 확인용 샘플입니다.</div>
     <div class="panel wide">
       <div class="adm-head">
         <div><h1 id="admH">관리자</h1><p class="lead" style="margin:0" id="admLead">회원과 후원 승인 요청을 관리합니다.</p></div>
@@ -2513,8 +2509,8 @@ function renderPost(id){
     prevNext(i>0?list[i-1]:null,i>=0&&i<list.length-1?list[i+1]:null,function(x){return '#post-'+x.id});
 }
 document.addEventListener('click',function(e){
-  var nf=e.target.closest('[data-nofile]');if(nf){e.preventDefault();toast(document.body.classList.contains('demo')?'미리보기 모드에서는 파일을 열 수 없습니다. 실제 사이트에서는 바로 열립니다.':'파일을 찾을 수 없습니다.');return}
-  var df=e.target.closest('[data-file]');if(df&&/^data:/.test(df.getAttribute('href')||'')&&document.body.classList.contains('demo')){e.preventDefault();toast('미리보기 모드에서는 파일을 내려받을 수 없습니다. 실제 사이트에서는 바로 내려받아집니다.');return}
+  var nf=e.target.closest('[data-nofile]');if(nf){e.preventDefault();toast('파일을 찾을 수 없습니다.');return}
+  var df=e.target.closest('[data-file]');if(df&&/^data:/.test(df.getAttribute('href')||'')&&document.body.classList.contains('demo')){e.preventDefault();toast('파일을 준비 중입니다.');return}
   var ep=e.target.closest('[data-editpost]');if(ep){location.hash='edit-'+ep.dataset.editpost;return}
 });
 
@@ -2634,7 +2630,7 @@ $('#fSignup').addEventListener('submit',function(e){e.preventDefault();
     if(!ok[0]||!ok[1]){showMsg(msg,!ok[0]&&!ok[1]?'아이디와 이메일이 이미 사용 중입니다.':!ok[0]?'이미 사용 중인 아이디입니다. 다른 아이디를 입력해 주세요.':'이미 가입된 이메일입니다. 로그인하거나 다른 이메일을 입력해 주세요.');throw {skip:true}}
     btn.textContent='가입하는 중…';return API.signUp(f)}).then(function(r){
     if(r.confirm){$('#fSignup').reset();showMsg(msg,'');pendingNote=f.email+' 로 인증 메일을 보냈습니다. 메일의 링크를 누른 뒤 로그인해 주세요.';location.hash='login';return}
-    renderAuth();loadPosts();$('#fSignup').reset();$('#suEmailCustom').hidden=true;idChecked=emailChecked=null;['suIdHint','suEmailHint'].forEach(function(h){hint(h,'')});toast(r.firstAdmin?'가입을 환영합니다! (데모: 첫 계정이라 관리자로 지정되었습니다)':'가입을 환영합니다!');goAfterAuth()
+    renderAuth();loadPosts();$('#fSignup').reset();$('#suEmailCustom').hidden=true;idChecked=emailChecked=null;['suIdHint','suEmailHint'].forEach(function(h){hint(h,'')});toast('가입을 환영합니다!');goAfterAuth()
   }).catch(function(err){if(!err||!err.skip)showMsg(msg,kr(err))}).then(function(){btn.disabled=false;btn.textContent='가입하기'});
 });
 
@@ -2654,7 +2650,7 @@ $('#fpSend').addEventListener('click',function(){var em=emailOf('fp'),h=$('#fpHi
   b.disabled=true;h.className='hint';h.textContent='확인 중…';
   API.emailAvailable(em).then(function(free){if(free){h.className='hint err';h.textContent='가입되지 않은 이메일입니다. 이메일을 다시 확인하거나 회원가입해 주세요.';return}
     return API.resetPassword(em).then(function(r){h.className='hint ok';
-      if(r&&r.demo){h.innerHTML='가입된 이메일입니다. 미리보기 모드라 메일은 보내지 않습니다. <button type="button" class="linkbtn" id="fpDemo" data-em="'+esc(em)+'" style="text-decoration:underline;color:var(--accent)">메일 속 링크를 누른 것처럼 재설정 화면 열기</button>';return}
+      if(r&&r.demo){h.innerHTML='가입된 이메일입니다. <button type="button" class="linkbtn" id="fpDemo" data-em="'+esc(em)+'" style="text-decoration:underline;color:var(--accent)">비밀번호 재설정 화면으로 이동</button>';return}
       h.textContent=em+' 로 비밀번호 재설정 메일을 보냈습니다. 메일의 링크를 누르면 새 비밀번호를 정할 수 있습니다. 메일이 안 보이면 스팸함도 확인해 주세요.'})})
     .catch(function(err){h.className='hint err';h.textContent=kr(err)}).then(function(){b.disabled=false});
 });
@@ -2841,7 +2837,7 @@ $('#admBody').addEventListener('click',function(e){
     API.setRoles(uid,roleDraft).then(function(){adm.users.forEach(function(x){if(x.id===uid)x.roles=roleDraft.slice()});roleEditId=null;toast('등급을 '+roleText(roleDraft)+'(으)로 바꿨습니다.');drawUsers();renderAuth()})
       .catch(function(err){b.disabled=false;toast(kr(err))});return}
   if(act==='resetpw'){var em=b.dataset.email;if(/@example\.com$/.test(em)){toast('예시 계정입니다.');return}
-    API.resetPassword(em).then(function(r){toast(r&&r.demo?'데모 모드에서는 메일이 발송되지 않습니다.':em+' 로 재설정 메일을 보냈습니다.')}).catch(function(err){toast(kr(err))});return}
+    API.resetPassword(em).then(function(r){toast(em+' 로 재설정 메일을 보냈습니다.')}).catch(function(err){toast(kr(err))});return}
   var id=Number(b.dataset.id),status={approve:'approved',reject:'rejected',undo:'pending'}[act];if(!status)return;
   var reason=act==='reject'?(($('#rr'+id)||{}).value||'').trim():null;
   b.disabled=true;
@@ -2894,7 +2890,7 @@ $('#fPost').addEventListener('submit',function(e){e.preventDefault();var msg=$('
   if(t==='report'&&!hasFile){showMsg(msg,'연구보고서 파일을 첨부해 주세요.');return}
   var wasEdit=!!editing,btn=$('#peBtn'),label=btn.textContent;btn.disabled=true;btn.textContent='올리는 중…';
   API.savePost({id:editing&&editing.id,type:t,title:title,body:body,dept:($('#fPost input[name="pdept"]:checked')||{}).value,category:($('#fPost input[name="pcat"]:checked')||{}).value,pinned:$('#pePin').checked,allow_download:$('#peDl').checked,file:peFile,removeFile:peRemove,old_path:editing&&editing.file_path})
-    .then(function(r){toast((wasEdit?'수정했습니다.':'게시했습니다.')+(r&&r.bigFile?' (미리보기 모드: 2MB가 넘는 파일은 이름만 저장됩니다)':''));var nid=(r&&r.id)||(editing&&editing.id);editing=null;return loadPosts().then(function(){location.hash=nid?'post-'+nid:PT_BACK[t]})})
+    .then(function(r){toast(wasEdit?'수정했습니다.':'게시했습니다.');var nid=(r&&r.id)||(editing&&editing.id);editing=null;return loadPosts().then(function(){location.hash=nid?'post-'+nid:PT_BACK[t]})})
     .catch(function(err){showMsg(msg,kr(err));btn.textContent=label}).then(function(){btn.disabled=false;if(btn.textContent==='올리는 중…')btn.textContent=label})});
 function drawPostsAdmin(){
   if(!evLoaded){loadEvents().then(function(){if(adm.tab==='post')drawPostsAdmin()})}
