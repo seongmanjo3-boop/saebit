@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>사회단체 새빛 — 에디토리얼 저널 시안</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap">
+<style>
+:root {
+  --bg: #FBFBF9;
+  --paper: #FFFFFF;
+  --ink: #18181B;
+  --ink-muted: #52525B;
+  --ink-light: #A1A1AA;
+  --line: #E4E4E7;
+  --crimson: #881337;
+  --crimson-soft: #FFE4E6;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: "Pretendard", -apple-system, sans-serif;
+  background-color: var(--bg);
+  color: var(--ink);
+  line-height: 1.7;
+}
+a { color: inherit; text-decoration: none; }
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Journal Masthead Header */
+.masthead {
+  border-bottom: 2px solid var(--ink);
+  padding: 24px 0 16px;
+  text-align: center;
+  background: var(--bg);
+}
+.masthead-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-muted);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.masthead-title {
+  font-family: 'Gowun Batang', serif;
+  font-size: 38px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.masthead-sub {
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  color: var(--crimson);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.journal-nav {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 18px;
+  font-size: 14px;
+  font-weight: 700;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+.journal-nav a:hover { color: var(--crimson); }
+
+/* Manifesto Hero */
+.manifesto-hero {
+  padding: 64px 0 48px;
+  border-bottom: 1px solid var(--line);
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 2fr 1.2fr;
+  gap: 56px;
+}
+.kicker {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--crimson);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.headline {
+  font-family: 'Gowun Batang', serif;
+  font-size: 42px;
+  line-height: 1.3;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: var(--ink);
+}
+.lead-para {
+  font-size: 18px;
+  color: var(--ink-muted);
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+.author-box {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+.author-sig {
+  font-weight: 700;
+  font-size: 15px;
+}
+.author-role {
+  font-size: 13px;
+  color: var(--ink-muted);
+}
+
+.side-agenda {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 32px;
+  border-radius: 4px;
+}
+.side-agenda h4 {
+  font-family: 'Gowun Batang', serif;
+  font-size: 18px;
+  border-bottom: 2px solid var(--crimson);
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+}
+.agenda-item {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px dashed var(--line);
+}
+.agenda-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+.agenda-tag {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--crimson);
+  text-transform: uppercase;
+}
+.agenda-title {
+  font-weight: 700;
+  font-size: 15px;
+  margin: 4px 0;
+}
+.agenda-meta {
+  font-size: 12px;
+  color: var(--ink-light);
+}
+
+/* 4 Principles Editorial Strip */
+.principles-section {
+  padding: 56px 0;
+  border-bottom: 1px solid var(--line);
+}
+.principles-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+.principle-col {
+  border-left: 2px solid var(--crimson);
+  padding-left: 18px;
+}
+.principle-hanja {
+  font-family: 'Gowun Batang', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--crimson);
+  margin-bottom: 4px;
+}
+.principle-name {
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+.principle-desc {
+  font-size: 13px;
+  color: var(--ink-muted);
+  line-height: 1.6;
+}
+
+/* Call to Action Bar */
+.action-strip {
+  background: var(--ink);
+  color: #FFF;
+  padding: 48px 0;
+  margin-top: 48px;
+}
+.action-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.action-btn {
+  background: var(--crimson);
+  color: #FFF;
+  padding: 14px 32px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 4px;
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="container">
+    <div class="masthead-meta">
+      <div>사회단체 새빛 공식 저널 포털</div>
+      <div>Vol. 2026 · 제1호</div>
+      <div>문의: seongmanjo3@gmail.com</div>
+    </div>
+    <div class="masthead-title">社會團體 새빛</div>
+    <div class="masthead-sub">화합과 성장 · The Saebit Civic Forum</div>
+    <nav class="journal-nav">
+      <a href="#about">단체 선언문</a>
+      <a href="#reports">정책연구보고서</a>
+      <a href="#columns">성명 및 논평</a>
+      <a href="#donate">후원 회계공개</a>
+      <a href="#signup">회원참여</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="manifesto-hero">
+    <div class="hero-grid">
+      <div>
+        <div class="kicker">창립 선언 및 정책 방향</div>
+        <h1 class="headline">"모두의 목소리가 모여<br>구체적인 정책이 되는 세상"</h1>
+        <p class="lead-para">
+          새빛은 특정 세대나 집단의 이익을 넘어, 공동체의 화합과 성장을 위해 문제를 실증적으로 분석하고 합법적인 절차 안에서 대안을 제시하는 사회단체입니다.
+          현장의 고통을 외면하지 않고, 데이터와 인터뷰로 다듬어진 정책 연구를 입법과 제도 개선으로 연결합니다.
+        </p>
+        <div class="author-box">
+          <div>
+            <div class="author-sig">조성만 대표이사</div>
+            <div class="author-role">사회단체 새빛 창립 취지문 中</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="side-agenda">
+        <h4>최신 정책 아젠다 브리핑</h4>
+        <div class="agenda-item">
+          <div class="agenda-tag">새빛 연구 제2026-1호</div>
+          <div class="agenda-title">엘리트 스포츠계 인권침해의 구조적 원인 분석</div>
+          <div class="agenda-meta">연구책임: 노은소 감사 / 정책연구국</div>
+        </div>
+        <div class="agenda-item">
+          <div class="agenda-tag">공식 공지사항</div>
+          <div class="agenda-title">새빛 공식 온라인 정책 플랫폼 및 회원 시스템 가동</div>
+          <div class="agenda-meta">중앙운영본부 전략기획국 공지</div>
+        </div>
+        <div class="agenda-item">
+          <div class="agenda-tag">성명·논평</div>
+          <div class="agenda-title">청소년·시민 정책 참여 통로 확대를 위한 3대 제안</div>
+          <div class="agenda-meta">새빛 대외협력국 공식 성명</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="principles-section">
+    <div class="principles-grid">
+      <div class="principle-col">
+        <div class="principle-hanja">團結</div>
+        <div class="principle-name">단결 (화합과 성장)</div>
+        <div class="principle-desc">다양한 배경의 사람들이 모여 갈등을 극복하고 성숙한 합의를 이룹니다.</div>
+      </div>
+      <div class="principle-col">
+        <div class="principle-hanja">秩序</div>
+        <div class="principle-name">질서 (절차와 규범)</div>
+        <div class="principle-desc">민주적 정당성과 회칙을 준수하며 공정하고 투명한 운영을 실현합니다.</div>
+      </div>
+      <div class="principle-col">
+        <div class="principle-hanja">責任</div>
+        <div class="principle-name">책임 (충실과 결정)</div>
+        <div class="principle-desc">한 줄의 정책안도 철저한 문헌 조사와 현장 검증을 거쳐 끝까지 책임집니다.</div>
+      </div>
+      <div class="principle-col">
+        <div class="principle-hanja">實踐</div>
+        <div class="principle-name">실천 (행동과 열정)</div>
+        <div class="principle-desc">말에 그치지 않고 제도 개선안을 관계 기관에 직접 전달하고 관철합니다.</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="action-strip">
+  <div class="container action-inner">
+    <div>
+      <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 6px;">새빛의 시민 회원이 되어 연구와 실천을 함께해 주세요</h3>
+      <p style="color: #A1A1AA; font-size: 14px;">후원계좌: KB국민은행 93770201139612 (예금주 안창민) | 문의: seongmanjo3@gmail.com</p>
+    </div>
+    <a href="#signup" class="action-btn">회원 참여 신청하기</a>
+  </div>
+</div>
+
+</body>
+</html>

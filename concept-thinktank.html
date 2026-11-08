@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>사회단체 새빛 — 화합과 성장 | 싱크탱크 에디토리얼 시안</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap">
+<style>
+:root {
+  --primary: #5C1D2E;
+  --primary-dark: #3E101D;
+  --primary-light: #F7EAEF;
+  --accent: #C29A55;
+  --slate-900: #0F172A;
+  --slate-800: #1E293B;
+  --slate-600: #475569;
+  --slate-400: #94A3B8;
+  --slate-100: #F1F5F9;
+  --slate-50: #F8FAFC;
+  --bg-page: #FAF9F8;
+  --card-bg: #FFFFFF;
+  --border: #EAE6E2;
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 12px 32px rgba(15, 23, 42, 0.06);
+  --shadow-lg: 0 24px 48px rgba(92, 29, 46, 0.08);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+  background-color: var(--bg-page);
+  color: var(--slate-800);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+
+/* Top utility bar */
+.top-bar {
+  background: var(--slate-900);
+  color: #CBD5E1;
+  font-size: 13px;
+  padding: 8px 24px;
+}
+.top-bar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.top-links a { margin-left: 18px; color: #94A3B8; transition: color .2s; }
+.top-links a:hover { color: #FFF; }
+
+/* Main Header */
+.site-header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.brand-logo-mark {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: #FFF;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Gowun Batang', serif;
+  font-weight: 700;
+  font-size: 20px;
+  box-shadow: 0 4px 12px rgba(92, 29, 46, 0.2);
+}
+.brand-text h1 {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--primary-dark);
+}
+.brand-text p {
+  font-size: 11px;
+  color: var(--slate-600);
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--slate-800);
+}
+.nav-menu a {
+  position: relative;
+  padding: 6px 0;
+  transition: color .2s;
+}
+.nav-menu a:hover {
+  color: var(--primary);
+}
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .2s;
+}
+.btn-primary {
+  background: var(--primary);
+  color: #FFF;
+  box-shadow: 0 4px 12px rgba(92, 29, 46, 0.15);
+}
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+.btn-outline {
+  border: 1px solid var(--border);
+  background: #FFF;
+  color: var(--slate-800);
+}
+.btn-outline:hover {
+  background: var(--slate-50);
+}
+
+/* Hero Section */
+.hero {
+  max-width: 1200px;
+  margin: 48px auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+}
+.hero-content {
+  padding-right: 20px;
+}
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--primary-light);
+  color: var(--primary);
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+.hero-title {
+  font-family: 'Gowun Batang', serif;
+  font-size: 46px;
+  line-height: 1.25;
+  font-weight: 700;
+  color: var(--slate-900);
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+.hero-title span {
+  color: var(--primary);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 8px;
+}
+.hero-desc {
+  font-size: 18px;
+  color: var(--slate-600);
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+.hero-btns {
+  display: flex;
+  gap: 14px;
+}
+
+/* Hero Spotlight Card */
+.spotlight-card {
+  background: #FFF;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  padding: 32px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+.spotlight-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+}
+.spotlight-badge {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+}
+.spotlight-title {
+  font-family: 'Gowun Batang', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--slate-900);
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+.spotlight-meta {
+  font-size: 13px;
+  color: var(--slate-600);
+  margin-bottom: 20px;
+  display: flex;
+  gap: 16px;
+}
+.spotlight-meta strong {
+  color: var(--slate-800);
+}
+.spotlight-summary {
+  font-size: 14px;
+  color: var(--slate-600);
+  background: var(--slate-50);
+  padding: 16px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border-left: 3px solid var(--primary);
+}
+
+/* Values Strip */
+.values-section {
+  background: #FFF;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 56px 24px;
+}
+.values-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.section-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 48px;
+}
+.section-kicker {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.section-title {
+  font-family: 'Gowun Batang', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--slate-900);
+  margin-bottom: 12px;
+}
+.section-desc {
+  font-size: 16px;
+  color: var(--slate-600);
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.val-card {
+  background: var(--slate-50);
+  border: 1px solid var(--border);
+  padding: 28px 24px;
+  border-radius: 14px;
+  transition: all .25s ease;
+}
+.val-card:hover {
+  background: #FFF;
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-light);
+}
+.val-num {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.val-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--slate-900);
+  margin-bottom: 6px;
+}
+.val-sub {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+.val-text {
+  font-size: 14px;
+  color: var(--slate-600);
+  line-height: 1.6;
+}
+
+/* CEO Quote Section */
+.ceo-section {
+  max-width: 1200px;
+  margin: 64px auto;
+  padding: 0 24px;
+}
+.ceo-card {
+  background: linear-gradient(135deg, #FFF, #FAF8F8);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 56px;
+  box-shadow: var(--shadow-sm);
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.ceo-photo-wrap {
+  text-align: center;
+  border-right: 1px solid var(--border);
+  padding-right: 32px;
+}
+.ceo-avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #7A2338, #5C1D2E);
+  color: #FFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Gowun Batang', serif;
+  font-size: 42px;
+  font-weight: 700;
+  margin: 0 auto 18px;
+  box-shadow: 0 8px 24px rgba(92, 29, 46, 0.2);
+}
+.ceo-name {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--slate-900);
+}
+.ceo-title {
+  font-size: 13px;
+  color: var(--primary);
+  font-weight: 600;
+}
+.ceo-message {
+  font-family: 'Gowun Batang', serif;
+  font-size: 18px;
+  line-height: 1.85;
+  color: var(--slate-800);
+}
+.ceo-message p {
+  margin-bottom: 16px;
+}
+
+/* Footer */
+.site-footer {
+  background: var(--slate-900);
+  color: #94A3B8;
+  padding: 64px 24px 32px;
+  font-size: 14px;
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+.footer-brand h3 {
+  color: #FFF;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+.footer-col h4 {
+  color: #FFF;
+  font-size: 15px;
+  margin-bottom: 16px;
+}
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 10px; }
+.footer-col a:hover { color: #FFF; }
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #64748B;
+}
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; gap: 32px; }
+  .values-grid { grid-template-columns: repeat(2, 1fr); }
+  .ceo-card { grid-template-columns: 1fr; padding: 32px; }
+  .ceo-photo-wrap { border-right: none; border-bottom: 1px solid var(--border); padding-bottom: 24px; }
+  .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+  .nav-menu { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <div>모두의 목소리가 정책이 되는 세상, 사회단체 새빛</div>
+    <div class="top-links">
+      <a href="#about">설립취지</a>
+      <a href="#reports">연구자료실</a>
+      <a href="#contact">1:1 문의</a>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="#" class="brand">
+      <div class="brand-logo-mark">새</div>
+      <div class="brand-text">
+        <h1>사회단체 새빛</h1>
+        <p>SAEBIT POLICY FOUNDATION</p>
+      </div>
+    </a>
+    <nav class="nav-menu">
+      <a href="#about">새빛 안내</a>
+      <a href="#reports">정책연구원</a>
+      <a href="#notice">공지·성명</a>
+      <a href="#donate">후원안내</a>
+      <a href="#contact">문의하기</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="#login" class="btn btn-outline">로그인</a>
+      <a href="#donate" class="btn btn-primary">후원하기</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-tag">새로운 빛, 정책으로 여는 내일</div>
+      <h2 class="hero-title">모두의 목소리가<br><span>정책</span>이 되는 세상</h2>
+      <p class="hero-desc">
+        사회단체 새빛은 우리 사회의 다양한 목소리를 실증 연구와 구체적인 정책 제안으로 바꾸는 공익 사회단체입니다.
+        화합과 성장을 원칙으로 더 나은 공동체를 만들어 갑니다.
+      </p>
+      <div class="hero-btns">
+        <a href="#about" class="btn btn-primary" style="padding: 14px 28px; font-size: 16px;">새빛 활동 안내</a>
+        <a href="#signup" class="btn btn-outline" style="padding: 14px 28px; font-size: 16px;">회원가입 참여</a>
+      </div>
+    </div>
+
+    <div class="spotlight-card">
+      <div class="spotlight-badge">주요 연구 보고서 제2026-1호</div>
+      <h3 class="spotlight-title">엘리트 스포츠계 인권침해의<br>구조적 원인 분석</h3>
+      <div class="spotlight-meta">
+        <div>연구책임 <strong>노은소 연구원</strong></div>
+        <div>발행 <strong>새빛국가종합연구원</strong></div>
+      </div>
+      <div class="spotlight-summary">
+        "현장 선수와 지도자 심층 인터뷰를 통해 폐쇄적 합숙 문화와 진학 구조의 구조적 악순환을 파헤치고, 실효성 있는 4대 제도 개선안을 제시합니다."
+      </div>
+      <a href="#reports" class="btn btn-outline" style="width: 100%;">보고서 원문 열람하기 →</a>
+    </div>
+  </section>
+
+  <section class="values-section">
+    <div class="values-inner">
+      <div class="section-header">
+        <div class="section-kicker">Core Principles</div>
+        <h3 class="section-title">새빛의 4대 기본원칙</h3>
+        <p class="section-desc">우리는 절차와 규범을 지키며, 행동과 열정으로 공동체의 화합을 실천합니다.</p>
+      </div>
+      <div class="values-grid">
+        <div class="val-card">
+          <div class="val-num">01</div>
+          <div class="val-title">단결 (團結)</div>
+          <div class="val-sub">화합과 성장</div>
+          <div class="val-text">서로 다른 배경과 의견을 하나로 모아 함께 성숙해지는 연대의 힘을 믿습니다.</div>
+        </div>
+        <div class="val-card">
+          <div class="val-num">02</div>
+          <div class="val-title">질서 (秩序)</div>
+          <div class="val-sub">절차와 규범</div>
+          <div class="val-text">정당한 법령과 회칙, 민주적 절차 안에서 투명하고 공정한 활동을 지향합니다.</div>
+        </div>
+        <div class="val-card">
+          <div class="val-num">03</div>
+          <div class="val-title">책임 (責任)</div>
+          <div class="val-sub">충실과 결정</div>
+          <div class="val-text">정책 제안 하나에도 현장의 목소리와 실증 데이터로 끝까지 책임을 다합니다.</div>
+        </div>
+        <div class="val-card">
+          <div class="val-num">04</div>
+          <div class="val-title">실천 (實踐)</div>
+          <div class="val-sub">행동과 열정</div>
+          <div class="val-text">단순한 담론에 머물지 않고 입법 청원, 성명, 현장 교육으로 변화를 만듭니다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ceo-section">
+    <div class="ceo-card">
+      <div class="ceo-photo-wrap">
+        <div class="ceo-avatar">성만</div>
+        <div class="ceo-name">조성만</div>
+        <div class="ceo-title">사회단체 새빛 대표이사</div>
+      </div>
+      <div class="ceo-message">
+        <p><strong>"사회의 문제는 누군가 대신 풀어 주기를 기다릴 때보다, 그 문제를 직접 겪는 사람들이 함께 목소리를 낼 때 비로소 풀립니다."</strong></p>
+        <p>새빛은 나이와 배경을 가리지 않고 모두의 목소리를 경청하며, 그 소중한 생각을 엄밀한 연구와 구체적인 정책 제안으로 다듬어 냅니다. 서로 다른 생각이 모여 하나의 방향을 찾는 ‘화합’, 그 과정에서 우리 모두가 자라는 ‘성장’이 새빛이 지키는 가장 소중한 가치입니다.</p>
+        <p>새빛의 걸음은 이제 시작입니다. 더 나은 내일을 향한 길에 여러분과 언제나 함께하겠습니다.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>사회단체 새빛</h3>
+      <p>모두의 목소리가 정책이 되는 세상, 화합과 성장으로 함께합니다.</p>
+      <p style="margin-top: 12px; font-size: 13px;">이메일: seongmanjo3@gmail.com | 후원계좌: 국민은행 93770201139612 (예금주 안창민)</p>
+    </div>
+    <div class="footer-col">
+      <h4>연구 및 활동</h4>
+      <ul>
+        <li><a href="#reports">새빛국가종합연구원</a></li>
+        <li><a href="#reports">정책 연구보고서</a></li>
+        <li><a href="#notice">성명 및 논평</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>참여와 후원</h4>
+      <ul>
+        <li><a href="#signup">회원가입 안내</a></li>
+        <li><a href="#donate">후원금 투명 공개</a></li>
+        <li><a href="#contact">1:1 문의 채널</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 사회단체 새빛. All Rights Reserved.</div>
+    <div>인스타그램 @sil_verdawn</div>
+  </div>
+</footer>
+
+</body>
+</html>
