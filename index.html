@@ -676,15 +676,15 @@ body *:not(.mark):not(.round):not(.keep-r):not(input[type="radio"]):not(input[ty
 .board .news-list .c{font-size:12px;padding:2px 8px}
 
 /* 바로가기 */
-.qm{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:repeat(6,1fr);gap:10px;background:none;border:none}
+.qm{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:repeat(7,1fr);gap:10px;background:none;border:none}
 .qm li{background:var(--bg);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow-xs);transition:all .2s ease}
 .qm li:hover{border-color:var(--accent);box-shadow:var(--shadow-sm);transform:translateY(-2px)}
 .qm a{display:flex;flex-direction:column;align-items:center;gap:10px;padding:20px 8px 18px;font-size:14px;font-weight:600;color:var(--ink);text-align:center}
 .qm svg{width:32px;height:32px;color:var(--jaju);transition:transform .2s ease}
 .qm a:hover{background:none;color:var(--accent)}
 .qm a:hover svg{transform:scale(1.08)}
-@media (max-width:980px){.qm{grid-template-columns:repeat(3,1fr)}}
-@media (max-width:540px){.qm{grid-template-columns:repeat(2,1fr);gap:8px}.qm a{font-size:13px;padding:15px 6px}}
+@media (max-width:980px){.qm{grid-template-columns:repeat(4,1fr);gap:8px}.qm li:last-child{grid-column:span 2}}
+@media (max-width:640px){.qm{grid-template-columns:repeat(2,1fr);gap:8px}.qm a{font-size:13px;padding:15px 6px}.qm li:last-child{grid-column:1/-1}.qm li:last-child a{flex-direction:row;justify-content:center;gap:8px;padding:13px}.qm li:last-child svg{width:24px;height:24px}}
 
 /* 연구보고서 게시판 + 후원 안내 */
 .mid-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:28px;align-items:start}
