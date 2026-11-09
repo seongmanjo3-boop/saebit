@@ -26,9 +26,9 @@
 <style>
 /* Layout: 공익재단 포털형 — 유틸리티 바 + 대메뉴(드롭다운) / 선언문 배너 / 후원 배너 / 소식 탭 / 참여 프로그램 / 후원 바로가기 / 연락처 / 정보형 푸터 */
 :root{
-  --jaju:#111111;--jaju-deep:#000000;--jaju-soft:#F4F4F5;--on-jaju:#FFFFFF;
+  --jaju:#7A2338;--jaju-deep:#5A1624;--jaju-soft:#FDF6F7;--on-jaju:#FFFFFF;
   --bg:#FFFFFF;--bg-2:#F9FAFB;--ink:#111111;--ink-2:#3F3F46;--ink-3:#71717A;--line:#E4E4E7;
-  --accent:#111111;--gold:#A16207;
+  --accent:#7A2338;--gold:#A16207;
   --shadow-xs:none;
   --shadow-sm:none;
   --shadow-md:none;
@@ -38,13 +38,13 @@
   --wrap:1200px;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --jaju:#E4E4E7;--jaju-deep:#FFFFFF;--jaju-soft:#27272A;--on-jaju:#18181B;
+  --jaju:#E07A8F;--jaju-deep:#F5A3B5;--jaju-soft:#2A1318;--on-jaju:#18181B;
   --bg:#121212;--bg-2:#18181B;--ink:#F4F4F5;--ink-2:#A1A1AA;--ink-3:#71717A;--line:#27272A;
-  --accent:#FFFFFF;--gold:#FBBF24;color-scheme:dark}}
+  --accent:#E07A8F;--gold:#FBBF24;color-scheme:dark}}
 :root[data-theme="dark"]{
-  --jaju:#E4E4E7;--jaju-deep:#FFFFFF;--jaju-soft:#27272A;--on-jaju:#18181B;
+  --jaju:#E07A8F;--jaju-deep:#F5A3B5;--jaju-soft:#2A1318;--on-jaju:#18181B;
   --bg:#121212;--bg-2:#18181B;--ink:#F4F4F5;--ink-2:#A1A1AA;--ink-3:#71717A;--line:#27272A;
-  --accent:#FFFFFF;--gold:#FBBF24;color-scheme:dark}
+  --accent:#E07A8F;--gold:#FBBF24;color-scheme:dark}
 
 *{box-sizing:border-box;border-radius:0!important}
 html{scroll-behavior:smooth;scroll-padding-top:90px}
@@ -104,7 +104,7 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:va
 
 /* manifesto banner */
 .manifesto{background:var(--bg);color:var(--ink);position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
-.manifesto .bgmark{position:absolute;right:-60px;top:50%;transform:translateY(-50%);width:min(560px,70vw);color:var(--line);opacity:.4}
+.manifesto .bgmark{position:absolute;right:-40px;top:50%;transform:translateY(-50%);width:min(580px,72vw);color:var(--jaju);opacity:.12;pointer-events:none}
 .manifesto .wrap{position:relative;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;padding-block:76px 68px}
 .manifesto .kicker{display:inline-block;background:var(--bg-2);border:1px solid var(--line);padding:5px 16px;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin:0 0 18px;color:var(--ink-2)}
 .manifesto blockquote{margin:0;font-family:var(--f-serif);font-weight:700;font-size:clamp(26px,4.3vw,44px);line-height:1.42;text-wrap:balance;max-width:17em;letter-spacing:-.02em;color:var(--ink)}
@@ -151,7 +151,7 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:va
 .news{display:grid;grid-template-columns:1.1fr 1fr;gap:28px}
 .news-feature{border-radius:0;overflow:hidden;background:var(--bg);border:1px solid var(--line);color:var(--ink);display:flex;flex-direction:column;justify-content:space-between;padding:32px;min-height:300px;position:relative;box-shadow:none;transition:border-color .15s ease}
 .news-feature:hover{transform:none;border-color:var(--ink);box-shadow:none}
-.news-feature .mark{position:absolute;right:24px;bottom:24px;width:120px;color:var(--line);opacity:.35}
+.news-feature .mark{position:absolute;right:24px;bottom:24px;width:120px;color:var(--jaju);opacity:.10}
 .news-feature .cat{font-size:12px;font-weight:800;color:var(--ink-2);letter-spacing:.08em;text-transform:uppercase;background:var(--bg-2);border:1px solid var(--line);padding:3px 10px;display:inline-block;width:fit-content}
 .news-feature h3{font-family:var(--f-serif);font-size:clamp(22px,2.4vw,28px);font-weight:700;line-height:1.4;margin:12px 0 0;text-wrap:balance;max-width:14em;position:relative;color:var(--ink)}
 .news-feature time{font-size:13.5px;color:var(--ink-3);position:relative}
@@ -778,7 +778,7 @@ table.ctable{width:100%;border-collapse:collapse;border-top:2px solid var(--ink)
 .principles{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;border:none;background:none}
 .principles li{position:relative;padding:22px 14px 20px;border:1px solid var(--line);background:var(--bg);text-align:center;box-shadow:none;transition:border-color .15s ease}
 .principles li:hover{border-color:var(--ink);box-shadow:none;transform:none}
-.principles .no{display:block;font-size:11.5px;font-weight:800;color:var(--ink-3);letter-spacing:.06em}
+.principles .no{display:block;font-size:11.5px;font-weight:800;color:var(--accent);letter-spacing:.06em}
 .principles b{display:flex;justify-content:center;align-items:baseline;gap:6px;margin-top:6px;font-family:var(--f-serif);font-size:24px;font-weight:700;color:var(--ink);line-height:1.3}
 .principles b small{font-size:13px;font-weight:400;color:var(--ink-3);letter-spacing:.06em}
 .principles .d{display:block;margin:10px auto 0;padding-top:10px;border-top:1px solid var(--line);max-width:8em;font-size:13px;color:var(--ink-2)}
@@ -792,7 +792,7 @@ table.ctable{width:100%;border-collapse:collapse;border-top:2px solid var(--ink)
 .org-cap::after{content:"";flex:1;height:1px;background:var(--line)}
 .org .lv{display:flex;justify-content:center;align-items:center;width:100%}
 .org .box{display:inline-flex;justify-content:center;align-items:center;min-width:160px;padding:12px 28px;font-size:15px;font-weight:700;border:1px solid var(--line);background:var(--bg);box-shadow:none;transition:border-color .15s ease}
-.org .box.top{background:var(--bg);color:var(--ink);border:2px solid var(--ink);box-shadow:none;font-weight:800}
+.org .box.top{background:var(--bg);color:var(--ink);border:2px solid var(--accent);box-shadow:none;font-weight:800}
 .org .box.mid{border:1.5px solid var(--line);color:var(--ink);background:var(--bg-2);font-weight:700}
 .org .vl{width:2px;height:22px;background:var(--line);margin:0 auto}
 .org .row{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;border-top:0;padding-top:22px}
