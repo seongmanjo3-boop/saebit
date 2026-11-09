@@ -712,11 +712,6 @@ body *:not(.mark):not(.round):not(.keep-r):not(input[type="radio"]):not(input[ty
 .about-links{gap:8px}
 .about-links .btn-line{font-size:14px;padding:9px 16px;border-radius:10px;box-shadow:var(--shadow-xs);transition:all .2s ease}
 .about-links .btn-line:hover{border-color:var(--accent);transform:translateY(-1px)}
-.org{background:var(--bg);border-radius:16px;border:1px solid var(--line);padding:26px 24px 28px;box-shadow:var(--shadow-xs)}
-.org-cap{margin:0 0 18px;font-size:14px;font-weight:700;color:var(--ink-2)}
-.org .box{padding:11px 24px;font-size:15px;border-radius:10px}
-.org .dept{text-align:center;background:var(--bg-2);border-radius:12px;overflow:hidden}
-.org .dept b{font-size:14.5px}
 
 /* 회원가입 띠 */
 .band{background:linear-gradient(135deg,#3A0D18 0%,#561726 100%);color:var(--on-jaju)}
@@ -791,29 +786,51 @@ table.ctable{width:100%;border-collapse:collapse;border-top:2px solid var(--ink)
 @media (max-width:440px){.principles{grid-template-columns:1fr}}
 
 /* 조직도 */
-.org{border:1px solid var(--line);border-radius:16px;background:var(--bg);padding:26px 24px 28px;box-shadow:var(--shadow-xs)}
-.org-cap{max-width:none!important;display:flex;align-items:center;gap:10px;margin:0 0 22px!important;font-size:14px;font-weight:700;color:var(--ink)!important}
+.org{border:1px solid var(--line);border-radius:16px;background:var(--bg);padding:28px 24px 32px;box-shadow:var(--shadow-xs)}
+.org-cap{max-width:none!important;display:flex;align-items:center;gap:10px;margin:0 0 24px!important;font-size:14px;font-weight:700;color:var(--ink-2)!important}
 .org-cap::after{content:"";flex:1;height:1px;background:var(--line)}
-.org .box{display:inline-flex;justify-content:center;min-width:150px;padding:12px 26px;font-size:15.5px;font-weight:700;border:1px solid var(--line);border-radius:10px;background:var(--bg);box-shadow:var(--shadow-xs);transition:all .2s ease}
-.org .box.top{background:linear-gradient(135deg,#561726 0%,#7A2338 100%);color:var(--on-jaju);border-color:transparent;box-shadow:var(--shadow-sm)}
-.org .box.mid{border:1.5px solid var(--accent);color:var(--accent);background:var(--jaju-soft)}
-.org .vl{width:1.5px;height:20px;background:var(--ink-3);margin:0 auto}
-.org .row{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;border-top:0;padding-top:20px}
-.org .row::before{content:"";position:absolute;top:0;left:calc((100% - 24px)/6);right:calc((100% - 24px)/6);height:1.5px;background:var(--ink-3)}
+.org .lv{display:flex;justify-content:center;align-items:center;width:100%}
+.org .box{display:inline-flex;justify-content:center;align-items:center;min-width:160px;padding:12px 28px;font-size:15px;font-weight:700;border:1px solid var(--line);border-radius:10px;background:var(--bg);box-shadow:var(--shadow-xs);transition:all .2s ease}
+.org .box.top{background:linear-gradient(135deg,#4A1220 0%,#6E1F33 50%,#7A2338 100%);color:var(--on-jaju);border-color:transparent;box-shadow:var(--shadow-sm)}
+.org .box.mid{border:1.5px solid var(--accent);color:var(--jaju-deep);background:var(--jaju-soft)}
+.org .vl{width:2px;height:22px;background:var(--line);margin:0 auto}
+.org .row{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;border-top:0;padding-top:22px}
+.org .row::before{content:"";position:absolute;top:0;left:calc((100% - 28px)/6);right:calc((100% - 28px)/6);height:2px;background:var(--line)}
 .org .dept{position:relative;display:flex;flex-direction:column;border:1px solid var(--line);border-top:3px solid var(--jaju);border-radius:12px;background:var(--bg);padding:0;text-align:left;font-size:14px;color:var(--ink-2);box-shadow:var(--shadow-xs);overflow:hidden;transition:all .2s ease}
 .org .dept:hover{border-color:var(--accent);box-shadow:var(--shadow-sm)}
-.org .dept::before{content:"";position:absolute;top:-23px;left:50%;width:1.5px;height:20px;background:var(--ink-3);transform:translateX(-50%)}
-.org .dept b{display:block;margin:0;padding:11px 12px;font-size:14.5px;line-height:1.4;color:var(--ink);background:var(--bg-2);border-bottom:1px solid var(--line);text-align:center;word-break:keep-all}
+.org .dept::before{content:"";position:absolute;top:-22px;left:50%;width:2px;height:22px;background:var(--line);transform:translateX(-50%)}
+.org .dept b{display:block;margin:0;padding:11px 12px;font-size:14.5px;font-weight:700;line-height:1.4;color:var(--ink);background:var(--bg-2);border-bottom:1px solid var(--line);text-align:center;word-break:keep-all}
 .org .dept ul{list-style:none;margin:0;padding:8px 12px 10px}
 .org .dept li{position:relative;padding:6px 0;text-align:center;font-size:13.5px;line-height:1.4;word-break:keep-all}
 .org .dept li+li{border-top:1px dashed var(--line)}
 .org .dept li::before{content:none}
-@media (max-width:600px){
-  .org{padding:20px 16px 22px}
-  .org .row{grid-template-columns:1fr;gap:16px;padding-top:0}
-  .org .row::before{display:none}
-  .org .dept::before{top:-17.5px;height:16px}
-  .org .row .dept:first-child::before{display:none}
+@media (max-width:680px){
+  .org{padding:20px 16px 24px}
+  .org .box{min-width:140px;padding:10px 20px;font-size:14px}
+  .org .row{display:flex;flex-direction:column;gap:12px;padding-top:10px}
+  .org .row::before{
+    content:"산하 기구";
+    position:static;
+    display:block;
+    margin:0 auto 6px;
+    padding:4px 14px;
+    font-size:12px;
+    font-weight:700;
+    color:var(--jaju-deep);
+    background:var(--jaju-soft);
+    border:1px solid rgba(122,35,56,.2);
+    border-radius:999px;
+    width:fit-content;
+    text-align:center;
+    height:auto;
+  }
+  .org .dept::before{display:none}
+  .org .dept{border:1px solid var(--line);border-left:4px solid var(--jaju);border-top:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow-xs)}
+  .org .dept b{text-align:left;padding:11px 14px;font-size:14.5px;font-weight:700;background:var(--bg-2);border-bottom:1px solid var(--line)}
+  .org .dept ul{display:flex;flex-wrap:wrap;gap:6px 10px;padding:10px 14px}
+  .org .dept li{padding:2px 0;font-size:13px;text-align:left}
+  .org .dept li+li{border-top:none}
+  .org .dept li+li::before{content:"· ";color:var(--ink-3)}
 }
 
 /* =====================================================================
