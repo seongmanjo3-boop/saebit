@@ -1089,6 +1089,132 @@ svg.clip{display:inline-block;width:15px;height:15px;vertical-align:-2px;margin-
 .nl-un{grid-column:2;justify-self:start;background:none;border:0;padding:0;font:inherit;font-size:12.5px;color:var(--ink-3);text-decoration:underline;cursor:pointer}
 @media (max-width:720px){.nl{grid-template-columns:minmax(0,1fr)}.nl-c,.nl-msg,.nl-un{grid-column:1}}
 .nl-f,.nl-t{min-width:0}
+
+/* ===== 모바일(스마트폰) 전용 정밀 최적화 (화면 폭 640px 이하) ===== */
+@media (max-width:640px){
+  html,body{overflow-x:hidden}
+  .wrap{padding-left:max(16px,env(safe-area-inset-left,0px))!important;padding-right:max(16px,env(safe-area-inset-right,0px))!important}
+  
+  /* 헤더 & 유틸 */
+  .util{font-size:12px}
+  .util .wrap{height:34px;gap:10px}
+  .util .right{gap:12px}
+  .hd{height:60px}
+  .brand{gap:9px}
+  .brand .mark{width:34px}
+  .brand b{font-size:19px;letter-spacing:-.02em}
+  .brand small{font-size:10px;letter-spacing:.08em}
+  .menu-btn{padding:6px 12px;font-size:13px;font-weight:700;color:var(--accent);border-color:var(--line);background:var(--bg)}
+  .drawer.open{max-height:calc(100dvh - 60px - env(safe-area-inset-top,0px))}
+  .drawer summary{padding:14px 4px;font-size:15px}
+  .drawer details a{padding:9px 12px;font-size:14.5px}
+
+  /* 섹션 공통 간격 */
+  .sec{padding-block:44px 38px}
+  .sec-top{margin-bottom:18px;gap:10px}
+  .sec-top h2{font-size:22px!important}
+  .more{padding:5px 12px;font-size:12.5px}
+
+  /* 선언문 히어로 배너 */
+  .manifesto .wrap{padding-block:38px 32px!important;gap:20px}
+  .manifesto .kicker{font-size:11px;padding:3px 10px;margin-bottom:10px}
+  .manifesto blockquote{font-size:20.5px!important;line-height:1.45!important;max-width:100%!important;letter-spacing:-.02em}
+  .manifesto .by{font-size:13px;margin:12px 0 0}
+  .manifesto .links{display:grid!important;grid-template-columns:1fr 1fr!important;gap:8px!important;min-width:0!important;margin-top:16px}
+  .manifesto .links a{padding:11px 10px!important;font-size:13px!important;justify-content:center!important;text-align:center!important}
+  .manifesto .links a.quiet{grid-column:1/-1;justify-content:center!important;padding:4px 0 0!important}
+  .manifesto .bgmark{width:min(340px,85vw);right:-60px;opacity:.08}
+
+  /* 공지사항 피처 & 목록 */
+  .news{gap:14px}
+  .news-feature{padding:22px 18px!important;min-height:160px!important}
+  .news-feature h3{font-size:17.5px!important;line-height:1.4!important;max-width:100%!important}
+  .news-list a{padding:13px 2px!important;font-size:14px}
+  .news-list .tt{font-size:14px}
+
+  /* 퀵메뉴 8개: 4열 2행으로 깔끔하게 컴팩트화 */
+  .qm{display:grid!important;grid-template-columns:repeat(4,1fr)!important;gap:6px!important;margin-top:16px!important}
+  .qm li{grid-column:auto!important}
+  .qm a{padding:12px 4px 10px!important;font-size:12px!important;gap:6px!important}
+  .qm svg{width:24px!important;height:24px!important}
+  .qm li:last-child a{flex-direction:column!important;padding:12px 4px 10px!important;gap:6px!important}
+
+  /* 연구보고서 & 후원 안내 */
+  .b-head{margin-bottom:14px}
+  .b-head h2{font-size:20px!important}
+  .give-box{padding:20px 16px}
+  .give-box p{font-size:14px;line-height:1.6}
+  .how{gap:10px}
+  .how li{padding-left:36px;font-size:13px;line-height:1.55}
+  .how li::before{width:24px;height:24px;font-size:12px}
+  .how b{font-size:14px}
+
+  /* 새빛이 하는 일 */
+  .works{display:grid!important;grid-template-columns:repeat(2,1fr)!important;gap:8px!important}
+  .works > div{padding:16px 14px}
+  .works .no{font-size:12px}
+  .works h3{font-size:15.5px;margin:4px 0 0}
+  .works p{font-size:12.5px;line-height:1.5;margin:6px 0 0}
+  .method{padding:18px 15px!important;margin-top:16px!important}
+  .method h3{font-size:16px!important}
+  .method p{font-size:13.5px!important;line-height:1.7!important}
+
+  /* 새빛 안내 & 기본원칙 & 조직도 */
+  .about h3{font-size:18px;margin-bottom:10px}
+  .about p{font-size:14px;line-height:1.7;margin-bottom:10px}
+  .pr-cap{font-size:13px;margin:16px 0 8px}
+  .principles{display:grid!important;grid-template-columns:repeat(2,1fr)!important;gap:8px!important}
+  .principles li{padding:12px 10px}
+  .principles b{font-size:14px}
+  .principles .d{font-size:12px}
+  .about-links{display:grid!important;grid-template-columns:1fr 1fr!important;gap:8px!important;margin-top:14px}
+  .about-links .btn-line{padding:10px 8px!important;font-size:13px!important;text-align:center!important;display:block}
+
+  /* 조직도 모바일 컴팩트 */
+  .org{padding:18px 12px 20px!important}
+  .org-cap{font-size:13px;margin-bottom:16px!important}
+  .org .box{min-width:110px!important;padding:8px 14px!important;font-size:13px!important}
+  .org .vl{height:16px}
+  .org .row{gap:8px;padding-top:8px}
+  .org .dept b{font-size:13px;padding:8px 12px}
+  .org .dept ul{padding:8px 12px;gap:4px 8px}
+  .org .dept li{font-size:12px}
+
+  /* 대표이사 인사말 */
+  .greet-text{font-size:14px!important;line-height:1.75!important}
+  .greet-sign{font-size:15.5px!important;margin-top:18px!important}
+
+  /* 참여 유도 배너 */
+  .band .wrap{padding-block:32px 30px;gap:14px;text-align:center;justify-content:center}
+  .band h2{font-size:19px;line-height:1.35}
+  .band p{font-size:13px}
+  .band .btns{width:100%;justify-content:center;gap:8px}
+  .band .btns a{flex:1;text-align:center;padding:12px 14px;font-size:13.5px}
+
+  /* FAQ & 연락처 */
+  .faq details{border-bottom:1px solid var(--line)}
+  .faq summary{padding:13px 2px;font-size:14px}
+  .faq .a{font-size:13.5px;line-height:1.65;padding:0 2px 14px 18px}
+  .ctable{font-size:13px}
+  .ctable th,.ctable td{padding:9px 2px}
+
+  /* 푸터 */
+  .f-links{gap:6px 14px;padding-block:14px;font-size:12px}
+  .f-body{padding-block:20px 28px;gap:16px;flex-direction:column}
+  .f-brand .mark{width:36px}
+  .f-brand b{font-size:15.5px}
+  .f-info{font-size:12px;line-height:1.75}
+  .f-info span+span::before{margin:0 6px}
+  .copy{font-size:11.5px;margin-top:6px}
+
+  /* 폼 화면 (회원가입/로그인 등) */
+  .view{padding-block:28px 48px}
+  .panel{padding:24px 16px!important;border-radius:14px}
+  .panel h1{font-size:22px}
+  .panel .lead{font-size:14px;margin-bottom:18px}
+  .field input,.field textarea{font-size:15px;padding:11px 12px}
+  .btn-primary{padding:13px;font-size:15px}
+}
 </style>
 <style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
