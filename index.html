@@ -75,8 +75,8 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:va
 .hd{display:flex;align-items:center;gap:32px;height:80px}
 .brand{display:flex;align-items:center;gap:12px;color:var(--accent)}
 .brand .mark{width:42px}
-.brand b{display:block;font-family:var(--f-sans);font-size:24px;font-weight:800;letter-spacing:-.02em;color:var(--ink);line-height:1.1}
-.brand small{display:block;font-size:11px;font-weight:700;color:var(--accent);letter-spacing:.12em;text-transform:uppercase}
+.brand b{display:block;font-family:var(--f-serif);font-size:24px;font-weight:700;letter-spacing:-.02em;color:var(--ink);line-height:1.1}
+.brand small{display:block;font-family:var(--f-serif);font-size:11px;font-weight:700;color:var(--accent);letter-spacing:.12em;text-transform:uppercase}
 .gnb{display:flex;margin-left:auto;list-style:none;padding:0;margin-block:0;height:100%}
 .gnb > li{position:relative;height:100%}
 .gnb > li > a{display:flex;align-items:center;height:100%;padding:0 26px;font-size:17px;font-weight:700}
@@ -125,7 +125,7 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:va
 .sec{padding-block:80px}
 .sec.gray{background:var(--bg-2)}
 .sec-top{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:28px;flex-wrap:wrap}
-.sec-top h2{margin:0;font-family:var(--f-sans);font-size:clamp(24px,3.2vw,30px);font-weight:800;letter-spacing:-.02em;color:var(--ink)}
+.sec-top h2{margin:0;font-family:var(--f-serif);font-size:clamp(24px,3.2vw,30px);font-weight:700;letter-spacing:-.02em;color:var(--ink)}
 .sec-top h2 span{color:var(--accent)}
 .more{font-size:13.5px;font-weight:600;color:var(--ink-2);border:1px solid var(--line);padding:6px 16px;background:var(--bg);letter-spacing:.02em;transition:all .15s ease}
 .more:hover{color:var(--bg);background:var(--ink);border-color:var(--ink)}
@@ -220,7 +220,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);font-size:13.5px;
 .f-body{display:flex;justify-content:space-between;gap:28px;padding-block:28px 36px;flex-wrap:wrap}
 .f-brand{display:flex;gap:12px;align-items:center;color:var(--ink-3)}
 .f-brand .mark{width:44px}
-.f-brand b{display:block;color:var(--ink);font-size:17px}
+.f-brand b{display:block;color:var(--ink);font-size:17px;font-family:var(--f-serif);font-weight:700}
 .f-info{line-height:1.9}
 .f-info span+span::before{content:"|";margin:0 10px;color:var(--line)}
 .copy{color:var(--ink-3);margin-top:8px}
@@ -652,7 +652,7 @@ body *:not(.mark):not(input[type="radio"]):not(input[type="checkbox"]){border-ra
 .sp-card:hover,.rcard:hover{transform:none}
 .toast{box-shadow:none}
 .brand b,.sec-top h2,.sp-main h2,.sp-card h3,.news-feature h3,.prog h3,.inst-head b,.about h3,.band h2,.panel h1,.how b,.rcard h3,.h2s,.damt,.stat b,.prose h2,.ftype,.faq .q{font-weight:700!important}
-.sec-top h2 span{color:var(--accent)!important;font-weight:900!important}
+.sec-top h2 span{color:var(--accent)!important;font-weight:700!important;font-family:var(--f-serif)}
 .gnb > li > a{font-size:16.5px;font-weight:500}
 .gnb > li > a::after{transition:none}
 .give{padding:10px 18px;font-size:14.5px}
@@ -661,7 +661,7 @@ body *:not(.mark):not(input[type="radio"]):not(input[type="checkbox"]){border-ra
 .sec{padding-block:56px}
 .sec.line-top{border-top:1px solid var(--line)}
 .sec-top{margin-bottom:20px}
-.sec-top h2{font-family:var(--f-sans);font-size:26px;font-weight:800;letter-spacing:-.02em}
+.sec-top h2{font-family:var(--f-serif);font-size:26px;font-weight:700;letter-spacing:-.02em}
 .tab{border-radius:2px}
 
 /* 상단: 비주얼 + 공지 게시판 */
@@ -742,7 +742,7 @@ table.ctable{width:100%;border-collapse:collapse;border-top:2px solid var(--ink)
 
 /* ===== 최종본 조정 ===== */
 /* 공지사항: 이전 버전 제목 서체 + 주요 공지 상자, 목록은 현재 틀 */
-#news .sec-top h2{font-size:clamp(24px,3vw,32px);font-weight:900!important;letter-spacing:-.01em}
+#news .sec-top h2{font-family:var(--f-serif);font-size:clamp(24px,3vw,32px);font-weight:700!important;letter-spacing:-.01em}
 #news .sec-top h2 span{color:var(--accent)}
 #news .news{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:28px}
 #news .news-feature{border-radius:0!important}
