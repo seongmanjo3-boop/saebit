@@ -18,6 +18,9 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#111111">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,9 +29,9 @@
 <style>
 /* Layout: 공익재단 포털형 — 유틸리티 바 + 대메뉴(드롭다운) / 선언문 배너 / 후원 배너 / 소식 탭 / 참여 프로그램 / 후원 바로가기 / 연락처 / 정보형 푸터 */
 :root{
-  --jaju:#380810;--jaju-deep:#240409;--jaju-soft:#F7EFF1;--on-jaju:#FFFFFF;
+  --jaju:#681728;--jaju-deep:#440C17;--jaju-soft:#F9EFF1;--on-jaju:#FFFFFF;
   --bg:#FFFFFF;--bg-2:#F9FAFB;--ink:#111111;--ink-2:#3F3F46;--ink-3:#71717A;--line:#E4E4E7;
-  --accent:#380810;--gold:#A16207;
+  --accent:#681728;--gold:#A16207;
   --shadow-xs:none;
   --shadow-sm:none;
   --shadow-md:none;
@@ -38,13 +41,13 @@
   --wrap:1200px;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --jaju:#E07A8F;--jaju-deep:#F5A3B5;--jaju-soft:#2A1318;--on-jaju:#18181B;
+  --jaju:#D47B8C;--jaju-deep:#E596A5;--jaju-soft:#2D141A;--on-jaju:#18181B;
   --bg:#121212;--bg-2:#18181B;--ink:#F4F4F5;--ink-2:#A1A1AA;--ink-3:#71717A;--line:#27272A;
-  --accent:#E07A8F;--gold:#FBBF24;color-scheme:dark}}
+  --accent:#D47B8C;--gold:#FBBF24;color-scheme:dark}}
 :root[data-theme="dark"]{
-  --jaju:#E07A8F;--jaju-deep:#F5A3B5;--jaju-soft:#2A1318;--on-jaju:#18181B;
+  --jaju:#D47B8C;--jaju-deep:#E596A5;--jaju-soft:#2D141A;--on-jaju:#18181B;
   --bg:#121212;--bg-2:#18181B;--ink:#F4F4F5;--ink-2:#A1A1AA;--ink-3:#71717A;--line:#27272A;
-  --accent:#E07A8F;--gold:#FBBF24;color-scheme:dark}
+  --accent:#D47B8C;--gold:#FBBF24;color-scheme:dark}
 
 *{box-sizing:border-box;border-radius:0!important}
 html{scroll-behavior:smooth;scroll-padding-top:90px}
@@ -108,7 +111,7 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:va
 .manifesto .wrap{position:relative;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;padding-block:76px 68px}
 .manifesto .kicker{display:inline-block;background:var(--bg-2);border:1px solid var(--line);padding:5px 16px;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin:0 0 18px;color:var(--ink-2)}
 .manifesto blockquote{margin:0;font-family:var(--f-serif);font-weight:700;font-size:clamp(26px,4.3vw,44px);line-height:1.42;text-wrap:balance;max-width:17em;letter-spacing:-.02em;color:var(--ink)}
-.manifesto blockquote em{font-style:normal;color:var(--ink);text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:2px}
+.manifesto blockquote em{font-style:normal;color:var(--accent);text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:6px;text-decoration-thickness:2px}
 .manifesto .by{margin:22px 0 0;font-size:14.5px;color:var(--ink-2);letter-spacing:.02em;display:flex;align-items:center;gap:10px}
 .manifesto .by::before{content:"";display:inline-block;width:24px;height:1px;background:var(--line)}
 .manifesto .links{display:flex;flex-direction:column;gap:9px;min-width:210px}
